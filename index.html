@@ -1027,22 +1027,22 @@
         <div class="ff-card" onclick="selectFF(1000)" id="ff_pkg_1000">
           <div class="ff-name">Paquete 1,000</div>
           <div class="ff-included">1,000 facturas adicionales / mes</div>
-          <div class="ff-price-mxn" id="ff1000_mxn">$10,000</div>
-          <div class="ff-price-detail">MXN / mes · <span id="ff1000_usd" style="color:var(--text-muted);">≈ USD 6,977/año</span></div>
+          <div class="ff-price-mxn" id="ff1000_mxn">$8,660</div>
+          <div class="ff-price-detail">MXN / mes · <span id="ff1000_usd" style="color:var(--text-muted);">≈ USD 5,988/año</span></div>
           <div class="ff-discount" style="background:rgba(74,188,160,0.15);color:var(--green);border-color:rgba(74,188,160,0.3);">Mayor volumen</div>
         </div>
         <div class="ff-card" onclick="selectFF(1500)" id="ff_pkg_1500">
           <div class="ff-name">Paquete 1,500</div>
           <div class="ff-included">1,500 facturas adicionales / mes</div>
-          <div class="ff-price-mxn" id="ff1500_mxn">$15,000</div>
-          <div class="ff-price-detail">MXN / mes · <span id="ff1500_usd" style="color:var(--text-muted);">≈ USD 10,465/año</span></div>
+          <div class="ff-price-mxn" id="ff1500_mxn">$12,990</div>
+          <div class="ff-price-detail">MXN / mes · <span id="ff1500_usd" style="color:var(--text-muted);">≈ USD 8,982/año</span></div>
           <div class="ff-discount" style="background:rgba(212,145,74,0.15);color:var(--amber);border-color:rgba(212,145,74,0.3);">Volumen alto</div>
         </div>
         <div class="ff-card" onclick="selectFF(2000)" id="ff_pkg_2000">
           <div class="ff-name">Paquete 2,000</div>
           <div class="ff-included">2,000 facturas adicionales / mes</div>
-          <div class="ff-price-mxn" id="ff2000_mxn">$20,000</div>
-          <div class="ff-price-detail">MXN / mes · <span id="ff2000_usd" style="color:var(--text-muted);">≈ USD 13,953/año</span></div>
+          <div class="ff-price-mxn" id="ff2000_mxn">$17,320</div>
+          <div class="ff-price-detail">MXN / mes · <span id="ff2000_usd" style="color:var(--text-muted);">≈ USD 11,976/año</span></div>
           <div class="ff-discount" style="background:rgba(201,168,76,0.15);color:var(--gold);border-color:rgba(201,168,76,0.3);">Máximo volumen</div>
         </div>
       </div>
@@ -1077,7 +1077,7 @@
             <div class="tdc-label">Tipo de cambio <span id="tdc-live-dot" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--text-muted);margin-left:4px;vertical-align:middle;" title="Actualizando..."></span></div>
             <a href="https://www.xe.com/es/currencyconverter/convert/?Amount=1&From=USD&To=MXN" target="_blank" rel="noopener" style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-decoration:none;opacity:0.7;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">Fuente: xe.com ↗</a>
           </div>
-          <input id="tdc" class="tdc-input" type="number" value="17.20" step="0.10" oninput="recalc()">
+          <input id="tdc" class="tdc-input" type="number" value="17.35" step="0.10" oninput="recalc()">
           <div class="tdc-suffix">MXN / USD</div>
         </div>
       </div>
@@ -1124,15 +1124,15 @@
               </div>
               <div class="tier-opt" id="ff_1000" onclick="setFF(1000)">
                 <div class="tier-opt-label">1,000 FF</div>
-                <div class="tier-opt-price">$10,000</div>
+                <div class="tier-opt-price">$8,660</div>
               </div>
               <div class="tier-opt" id="ff_1500" onclick="setFF(1500)">
                 <div class="tier-opt-label">1,500 FF</div>
-                <div class="tier-opt-price">$15,000</div>
+                <div class="tier-opt-price">$12,990</div>
               </div>
               <div class="tier-opt" id="ff_2000" onclick="setFF(2000)">
                 <div class="tier-opt-label">2,000 FF</div>
-                <div class="tier-opt-price">$20,000</div>
+                <div class="tier-opt-price">$17,320</div>
               </div>
             </div>
             <div style="margin-top:10px;">
@@ -1141,7 +1141,7 @@
                 <span class="input-suffix">FF / mes</span>
               </div>
             </div>
-            <div class="input-hint">MXN / mes · facturas adicionales a las 200 incluidas · $10 MXN por factura</div>
+            <div class="input-hint">MXN / mes · facturas adicionales a las 200 incluidas · $8.66 MXN por factura</div>
           </div>
 
           <!-- Gasto tarjetas — Cashback (1) -->
@@ -1524,7 +1524,7 @@ var FF_PACKAGES = {
   1500: { facturas: 1500, desc: 'Paquete 1,500 facturas extra' },
   2000: { facturas: 2000, desc: 'Paquete 2,000 facturas extra' }
 };
-var FF_PRICE_MXN = 10; // $10 MXN por factura adicional
+var FF_PRICE_MXN = 8.66; // $8.66 MXN por factura adicional
 var FF_BASE_FACTURAS = 300; // 300 fotofacturas incluidas en precio base (ocultas)
 
 var selectedFF = 0;
@@ -1608,7 +1608,7 @@ function selectFF(paq) { setFF(paq); }
 //  MAIN RECALC
 // ──────────────────────────────────
 function recalc() {
-  var tdc   = parseFloat(document.getElementById('tdc').value) || 17.20;
+  var tdc   = parseFloat(document.getElementById('tdc').value) || 17.35;
   var users = parseInt(document.getElementById('usuarios').value) || 1;
   var desc  = parseFloat(document.getElementById('descuento').value) || 0;
   var gastoMes = parseFloat(document.getElementById('gasto_tarjetas').value) || 0;
